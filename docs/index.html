@@ -1,52 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEEKIA CONSULTORES SAS</title>
     <style>
-        .centrar {
-            text-align: center; /* Centra el contenido */
+        /* Estilos generales para toda la página */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
         }
-        .derecha {
-        text-align: right;
-    }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./img/logo.jpg') center/cover no-repeat;
+            background-size: cover;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding-top: 50px;
+        }
+
+        .header h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .header h3 {
+            font-size: 25px;
+            margin: 10px 0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .tabs button {
+            background-color: transparent;
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .tabs button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .tabs button.active {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: black;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 30px;
+            text-align: left;
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 20px;
+            width: 80%;
+            max-width: 1000px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .subsection {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #4CAF50;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .subsection.active {
+            display: block;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="centrar"> <!-- Contenedor para centrar -->
-        <h1>SEEKIA</h1>
-        <h3>Consultores sas</h3>
-        <hr>
-        <img src="./img/logo.jpg" height="250" width="450" />
- 
+    <div class="background-image"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>SEEKIA</h1>
+            <h3>Consultores SAS</h3>
+            <hr>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'informacion')">Información</button>
+            <button class="tab-button" onclick="openTab(event, 'quienes-somos')">¿Quiénes somos?</button>
+            <button class="tab-button" onclick="openTab(event, 'mision-vision')">Misión y Visión</button>
+            <button class="tab-button" onclick="openTab(event, 'servicios')">Servicios</button>
+        </div>
+
+        <div id="informacion" class="tab-content active">
+            <h2>Información General</h2>
+            <p>Gracias por <span style="color:rgb(243, 0, 0)">su participación</span>. <br><br>Esperamos que su experiencia con nosotros sea satisfactoria.</p>
+        </div>
+
+        <div id="quienes-somos" class="tab-content">
+            <h2>¿Quiénes somos?</h2>
+            <p>Somos una empresa líder en consultoría, comprometidos con ofrecer soluciones innovadoras a nuestros clientes.</p>
+            <div class="subsection" id="subsection-quienes-somos">
+                <p>Contamos con un equipo multidisciplinario con experiencia en distintos sectores, lo que nos permite ofrecer un servicio integral.</p>
+            </div>
+            <button onclick="toggleSubsection('subsection-quienes-somos')">Leer más</button>
+        </div>
+
+        <div id="mision-vision" class="tab-content">
+            <h2>Misión</h2>
+            <p>Proveer soluciones integrales y innovadoras que ayuden a nuestros clientes a optimizar sus procesos.</p>
+
+            <h2>Visión</h2>
+            <p>Ser la firma de consultoría más confiable y eficiente en el mercado.</p>
+
+            <div class="subsection" id="subsection-mision-vision">
+                <p>Nos enfocamos en resultados a largo plazo, buscando siempre la satisfacción total de nuestros clientes.</p>
+            </div>
+            <button onclick="toggleSubsection('subsection-mision-vision')">Leer más</button>
+        </div>
+
+        <div id="servicios" class="tab-content">
+            <h2>Servicios</h2>
+            <ul>
+                <li>Consultoría en gestión empresarial</li>
+                <li>Optimización de procesos</li>
+                <li>Desarrollo de estrategias de crecimiento</li>
+                <li>Asesoramiento en transformación digital</li>
+            </ul>
+            <div class="subsection" id="subsection-servicios">
+                <p>Contamos con un enfoque personalizado para cada cliente, adaptando nuestros servicios a sus necesidades específicas.</p>
+            </div>
+            <button onclick="toggleSubsection('subsection-servicios')">Leer más</button>
+        </div>
     </div>
 
-    <br>
-    <h2>MISIÓN</h2>
-    <div class="derecha">
-    <h2>VISIÓN</h2>
-    </div>
-    <p>Gracias por <span style="color:rgb(243, 0, 0)">su participación</span>. <br><br>esperamos no se vuelva a repetir</p>
-    <p>tengo calor</p>
+    <script>
+        // Función para cambiar entre las pestañas
+        function openTab(event, tabName) {
+            var i, tabcontent, tabbuttons;
 
-    <form>
-        <label for="nombre">NOMBRE:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo"/>
-        <label> Cargue su petición </label>
-        <input type="file"/>
-        <br><br>
-        <label for="comentario">COMENTARIO:</label><br>
-        <textarea cols="20" rows="10" id="comentario" placeholder="Ingrese los detalles de su petición"></textarea>
-        <br>
-        <input type="submit"/>
-    </form>
+            // Obtén todas las pestañas y los botones
+            tabcontent = document.getElementsByClassName("tab-content");
+            tabbuttons = document.getElementsByClassName("tab-button");
 
-    <!-- Comentario de prueba -->
-    <a target="_blank" href="https://www.google.com.co">Ir a aplicativo de clientes</a>
+            // Oculta todas las pestañas
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Elimina la clase 'active' de todos los botones
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+
+            // Muestra la pestaña seleccionada y activa el botón correspondiente
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        // Función para mostrar u ocultar los subapartados
+        function toggleSubsection(subsectionId) {
+            var subsection = document.getElementById(subsectionId);
+            subsection.classList.toggle("active");
+        }
+    </script>
 
 </body>
-</html>
-
 </html>
