@@ -10,7 +10,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #000000;
             color: #333;
         }
 
@@ -41,7 +41,7 @@
         /* Estilo de la cabecera */
         .header {
             text-align: center;
-            color: white;
+            color: rgb(0, 0, 0);
             padding-top: 50px;
         }
 
@@ -61,12 +61,12 @@
             justify-content: center;
             margin-top: 30px;
         }
-
+        /*fondo botones de pestañas*/
         .tabs button {
             background-color: transparent;
-            color: white;
+            color: rgb(255, 255, 255);
             padding: 15px 30px;
-            border: 2px solid white;
+            border: 2px solid rgb(255, 255, 255);
             border-radius: 5px 5px 0 0;
             cursor: pointer;
             margin: 0 5px;
@@ -75,12 +75,12 @@
         }
 
         .tabs button:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(0, 0, 0, 0.3);
         }
 
         .tabs button.active {
             background-color: rgba(255, 255, 255, 0.5);
-            color: black;
+            color: rgba(0, 0, 0, 0.755);
         }
 
         /* Estilo para el contenido de las pestañas */
@@ -88,12 +88,12 @@
             display: none;
             padding: 30px;
             text-align: left;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.864);
             border-radius: 5px;
             margin-top: 20px;
             width: 80%;
             max-width: 1000px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(4, 4, 4, 0.703);
         }
 
         .tab-content.active {
@@ -179,15 +179,16 @@
         </div>
 
         <div class="tabs">
-            <button class="tab-button active" onclick="openTab(event, 'informacion')">Información</button>
+            <button class="tab-button active" onclick="openTab(event, 'Contacto')">Contacto</button>
             <button class="tab-button" onclick="openTab(event, 'quienes-somos')">¿Quiénes somos?</button>
             <button class="tab-button" onclick="openTab(event, 'mision-vision')">Misión y Visión</button>
             <button class="tab-button" onclick="openTab(event, 'servicios')">Servicios</button>
         </div>
 
-        <div id="informacion" class="tab-content active">
+        <div id="Contacto" class="tab-content active">
             <h2>Información General</h2>
-            <p>Gracias por su participación. Esperamos que su experiencia con nosotros sea satisfactoria.</p>
+            <p>WhatsApp: <a href="https://wa.me/573138896907" target="_blank" style="color:green; text-decoration: none;">+57 313 8896907</a></p>
+            <p>Correo electrónico: <a href="mailto:seekiagroup@gmail.com" style="color: blue; text-decoration: underline;">seekiagroup@gmail.com</a></p>
         </div>
 
         <div id="quienes-somos" class="tab-content">
