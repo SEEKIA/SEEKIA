@@ -1,231 +1,245 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEEKIA CONSULTORES SAS</title>
     <style>
-        /* Estilo general de la página */
+        /* --- Estilo Global --- */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000000;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(244, 244, 244, 0.9)); /* Degradado de fuera hacia adentro */
             color: #333;
         }
 
-        /* Estilo de la imagen de fondo */
-        .background-image {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* --- Encabezado --- */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between; /* Logo a la izquierda y menú centrado */
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: fixed;
             width: 100%;
-            height: 100%;
-            background: url('./img/logo.jpg') center/cover no-repeat;
-            background-size: cover;
-            filter: blur(8px);
-            z-index: -1;
+            z-index: 1000;
+            flex-wrap: wrap;
         }
 
-        /* Estilo del contenedor principal */
-        .container {
-            width: 100%;
-            height: 100vh;
+        /* --- Logo --- */
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            margin-right: 20px;
+        }
+
+        /* --- Menú de Navegación --- */
+        header nav {
+        display: flex;
+        justify-content: flex-start; /* Alinea el menú a la izquierda */
+        gap: 120px; /* Espaciado razonable entre enlaces */
+        flex-wrap: wrap; /* Permite que el menú se adapte si es demasiado largo */
+        margin-left: auto; /* Ajusta la posición del menú hacia la derecha */
+        margin-right: auto; /* Centra el menú en la página */
+}
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        header nav a:hover {
+            text-shadow: 0 0 10px #fff;
+            background-color: rgba(255, 255, 255, 0.3); /* Sombreado blanco */
+            border-radius: 5px;
+        }
+
+        /* --- Sección Hero (Portada) --- */
+        .hero {
+            background: url('./img/logo.jpg') center/cover no-repeat;
+            height: 60vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            color: #fff;
+            text-align: center;
             position: relative;
         }
 
-        /* Estilo de la cabecera */
-        .header {
-            text-align: center;
-            color: rgb(0, 0, 0);
-            padding-top: 50px;
+        /* --- Degradado sobre la imagen para difuminar completamente --- */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Degradado oscuro completo */
+            z-index: -1;
         }
 
-        .header h1 {
-            font-size: 50px;
+        .hero div {
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 48px;
             margin: 0;
         }
 
-        .header h3 {
-            font-size: 25px;
-            margin: 10px 0;
+        .hero p {
+            font-size: 20px;
+            margin: 10px 0 0;
         }
 
-        /* Estilo de las pestañas */
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        /*fondo botones de pestañas*/
-        .tabs button {
-            background-color: transparent;
-            color: rgb(255, 255, 255);
-            padding: 15px 30px;
-            border: 2px solid rgb(255, 255, 255);
-            border-radius: 5px 5px 0 0;
-            cursor: pointer;
-            margin: 0 5px;
-            font-size: 18px;
-            transition: all 0.3s;
+        /* --- Contenido Principal --- */
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            margin-top: 80px;
         }
 
-        .tabs button:hover {
-            background-color: rgba(0, 0, 0, 0.3);
+        /* --- Sección --- */
+        section {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .tabs button.active {
-            background-color: rgba(255, 255, 255, 0.5);
-            color: rgba(0, 0, 0, 0.755);
+        section h2 {
+            margin-top: 0;
+            color: #333;
         }
 
-        /* Estilo para el contenido de las pestañas */
+        section p {
+            line-height: 1.6;
+        }
+
+        /* --- Pestañas Independientes --- */
         .tab-content {
             display: none;
-            padding: 30px;
-            text-align: left;
-            background-color: rgba(255, 255, 255, 0.864);
-            border-radius: 5px;
-            margin-top: 20px;
-            width: 80%;
-            max-width: 1000px;
-            box-shadow: 0 4px 10px rgba(4, 4, 4, 0.703);
         }
 
         .tab-content.active {
             display: block;
         }
 
-        /* Estilo de los subapartados */
-        .subsection {
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
             padding: 10px;
-            background-color: #f9f9f9;
-            border-left: 4px solid #4CAF50;
-            margin-top: 10px;
-            display: none;
+            margin-top: 30px;
         }
 
-        .subsection.active {
-            display: block;
-        }
-
-        /* Estilo de los enlaces */
-        a {
-            color: #4CAF50;
+        footer a {
+            color: #FFD700;
             text-decoration: none;
         }
 
-        a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
 
-        /* Media Query para pantallas más pequeñas (móviles) */
+        /* --- Media Queries (Diseño Responsivo) --- */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 35px; /* Reducimos el tamaño del título */
+            header nav {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .header h3 {
-                font-size: 18px; /* Reducimos el tamaño del subtítulo */
+            .hero h1 {
+                font-size: 32px;
             }
 
-            .tabs {
-                flex-direction: column; /* Las pestañas se organizan en columna */
-            }
-
-            .tabs button {
-                width: 100%; /* Los botones ocupan todo el ancho disponible */
-                padding: 15px 0; /* Ajustamos el padding para que sea más grande en móviles */
-                font-size: 16px; /* Ajustamos el tamaño de la fuente */
-            }
-
-            .tab-content {
-                width: 90%; /* Reducimos el ancho del contenido */
-                padding: 20px; /* Reducimos el padding */
+            .hero p {
+                font-size: 16px;
             }
         }
-
-        /* Media Query para pantallas muy pequeñas (teléfonos móviles) */
-        @media (max-width: 480px) {
-            .tabs button {
-                font-size: 14px; /* Reducimos más el tamaño de los botones */
-                padding: 12px 0; /* Menos padding en botones pequeños */
-            }
-
-            .tab-content {
-                width: 95%; /* Aumentamos el ancho del contenido en pantallas muy pequeñas */
-            }
-
-            .subsection {
-                padding: 8px; /* Reducimos el padding de los subapartados */
-            }
-        }
-
     </style>
 </head>
+
 <body>
 
-    <div class="background-image"></div>
+    <!-- Encabezado con menú de navegación -->
+    <header>
+        <div class="logo">SEEKIA</div>
+        <nav>
+            <a href="#" onclick="showTab('contacto')">Contacto</a>
+            <a href="#" onclick="showTab('quienes-somos')">¿Quiénes somos?</a>
+            <a href="#" onclick="showTab('mision-vision')">Misión y Visión</a>
+            <a href="#" onclick="showTab('servicios')">Servicios</a>
+        </nav>
+    </header>
 
-    <div class="container">
-        <div class="header">
-            <h1>SEEKIA</h1>
-            <h3>Consultores SAS</h3>
-            <hr>
+    <!-- Sección principal de bienvenida con imagen de fondo -->
+    <div class="hero">
+        <div>
+            <h1>SEEKIA CONSULTORES SAS</h1>
+            <p>Soluciones integrales para tu negocio</p>
         </div>
+    </div>
 
-        <div class="tabs">
-            <button class="tab-button active" onclick="openTab(event, 'Contacto')">Contacto</button>
-            <button class="tab-button" onclick="openTab(event, 'quienes-somos')">¿Quiénes somos?</button>
-            <button class="tab-button" onclick="openTab(event, 'mision-vision')">Misión y Visión</button>
-            <button class="tab-button" onclick="openTab(event, 'servicios')">Servicios</button>
-        </div>
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección de contacto -->
+        <section id="contacto" class="tab-content">
+            <h2>Contacto</h2>
+            <p>WhatsApp: <a href="https://wa.me/573138896907" target="_blank" style="color:green;">+57 313 8896907</a></p>
+            <p>Correo electrónico: <a href="mailto:seekiagroup@gmail.com" style="color: blue;">seekiagroup@gmail.com</a></p>
+        </section>
 
-        <div id="Contacto" class="tab-content active">
-            <h2>Información General</h2>
-            <p>WhatsApp: <a href="https://wa.me/573138896907" target="_blank" style="color:green; text-decoration: none;">+57 313 8896907</a></p>
-            <p>Correo electrónico: <a href="mailto:seekiagroup@gmail.com" style="color: blue; text-decoration: underline;">seekiagroup@gmail.com</a></p>
-        </div>
-
-        <div id="quienes-somos" class="tab-content">
+        <!-- Sección de "Quiénes somos" -->
+        <section id="quienes-somos" class="tab-content">
             <h2>¿Quiénes somos?</h2>
             <p>Somos una empresa consultora comprometida con soluciones innovadoras.</p>
-        </div>
+        </section>
 
-        <div id="mision-vision" class="tab-content">
+        <!-- Sección de Misión y Visión -->
+        <section id="mision-vision" class="tab-content">
             <h2>Misión</h2>
             <p>Proveer soluciones integrales que ayuden a nuestros clientes a mejorar sus procesos.</p>
             <h2>Visión</h2>
             <p>Ser la firma de consultoría más confiable y eficiente en el mercado.</p>
-        </div>
+        </section>
 
-        <div id="servicios" class="tab-content">
+        <!-- Sección de Servicios -->
+        <section id="servicios" class="tab-content">
             <h2>Servicios</h2>
             <p>Ofrecemos consultoría en diferentes áreas, incluyendo gestión de proyectos y análisis de datos.</p>
-        </div>
+        </section>
+    </main>
 
-    </div>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 SEEKIA Consultores SAS. Todos los derechos reservados. <a href="#contacto">Contacto</a></p>
+    </footer>
 
+    <!-- JavaScript para pestañas independientes -->
     <script>
-        // Función para cambiar entre las pestañas
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none"; /* Oculta todos los contenidos */
-            }
-            tablinks = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", ""); /* Elimina la clase activa de todos los botones */
-            }
-            document.getElementById(tabName).style.display = "block"; /* Muestra el contenido de la pestaña seleccionada */
-            evt.currentTarget.className += " active"; /* Marca el botón como activo */
+        // Muestra la sección seleccionada y oculta las demás
+        function showTab(tabId) {
+            const allTabs = document.querySelectorAll('.tab-content');
+            allTabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Muestra la pestaña de contacto por defecto al cargar la página
+        window.onload = function () {
+            showTab('contacto');
         }
     </script>
 
 </body>
+
 </html>
