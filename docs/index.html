@@ -40,13 +40,13 @@
 
         /* --- Menú de Navegación --- */
         header nav {
-        display: flex;
-        justify-content: flex-start; /* Alinea el menú a la izquierda */
-        gap: 120px; /* Espaciado razonable entre enlaces */
-        flex-wrap: wrap; /* Permite que el menú se adapte si es demasiado largo */
-        margin-left: auto; /* Ajusta la posición del menú hacia la derecha */
-        margin-right: auto; /* Centra el menú en la página */
-}
+            display: flex;
+            justify-content: flex-start; /* Alinea el menú a la izquierda */
+            gap: 120px; /* Espaciado razonable entre enlaces */
+            flex-wrap: wrap;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         header nav a {
             color: #fff;
@@ -57,11 +57,46 @@
 
         header nav a:hover {
             text-shadow: 0 0 10px #fff;
-            background-color: rgba(255, 255, 255, 0.3); /* Sombreado blanco */
+            background-color: rgba(255, 255, 255, 0.3);
             border-radius: 5px;
         }
 
-        /* --- Sección Hero (Portada) --- */
+        /* --- Menú hamburguesa --- */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+        }
+
+        /* --- Estilo Responsivo --- */
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 15px 0;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            }
+
+            header nav.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* --- Hero --- */
         .hero {
             background: url('./img/logo.jpg') center/cover no-repeat;
             height: 60vh;
@@ -73,7 +108,6 @@
             position: relative;
         }
 
-        /* --- Degradado sobre la imagen para difuminar completamente --- */
         .hero::before {
             content: "";
             position: absolute;
@@ -81,12 +115,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)); /* Degradado oscuro completo */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
             z-index: -1;
-        }
-
-        .hero div {
-            position: relative;
         }
 
         .hero h1 {
@@ -107,7 +137,6 @@
             margin-top: 80px;
         }
 
-        /* --- Sección --- */
         section {
             margin-bottom: 30px;
             background: rgba(255, 255, 255, 0.9);
@@ -125,7 +154,6 @@
             line-height: 1.6;
         }
 
-        /* --- Pestañas Independientes --- */
         .tab-content {
             display: none;
         }
@@ -150,30 +178,13 @@
         footer a:hover {
             text-decoration: underline;
         }
-
-        /* --- Media Queries (Diseño Responsivo) --- */
-        @media (max-width: 768px) {
-            header nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
 
 <body>
-
-    <!-- Encabezado con menú de navegación -->
     <header>
         <div class="logo">SEEKIA</div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav>
             <a href="#" onclick="showTab('contacto')">Contacto</a>
             <a href="#" onclick="showTab('quienes-somos')">¿Quiénes somos?</a>
@@ -182,7 +193,6 @@
         </nav>
     </header>
 
-    <!-- Sección principal de bienvenida con imagen de fondo -->
     <div class="hero">
         <div>
             <h1>SEEKIA CONSULTORES SAS</h1>
@@ -190,22 +200,18 @@
         </div>
     </div>
 
-    <!-- Contenido principal -->
     <main>
-        <!-- Sección de contacto -->
         <section id="contacto" class="tab-content">
             <h2>Contacto</h2>
             <p>WhatsApp: <a href="https://wa.me/573138896907" target="_blank" style="color:green;">+57 313 8896907</a></p>
             <p>Correo electrónico: <a href="mailto:seekiagroup@gmail.com" style="color: blue;">seekiagroup@gmail.com</a></p>
         </section>
 
-        <!-- Sección de "Quiénes somos" -->
         <section id="quienes-somos" class="tab-content">
             <h2>¿Quiénes somos?</h2>
             <p>Somos una empresa consultora comprometida con soluciones innovadoras.</p>
         </section>
 
-        <!-- Sección de Misión y Visión -->
         <section id="mision-vision" class="tab-content">
             <h2>Misión</h2>
             <p>Proveer soluciones integrales que ayuden a nuestros clientes a mejorar sus procesos.</p>
@@ -213,33 +219,32 @@
             <p>Ser la firma de consultoría más confiable y eficiente en el mercado.</p>
         </section>
 
-        <!-- Sección de Servicios -->
         <section id="servicios" class="tab-content">
             <h2>Servicios</h2>
             <p>Ofrecemos consultoría en diferentes áreas, incluyendo gestión de proyectos y análisis de datos.</p>
         </section>
     </main>
 
-    <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 SEEKIA Consultores SAS. Todos los derechos reservados. <a href="#contacto">Contacto</a></p>
     </footer>
 
-    <!-- JavaScript para pestañas independientes -->
     <script>
-        // Muestra la sección seleccionada y oculta las demás
         function showTab(tabId) {
             const allTabs = document.querySelectorAll('.tab-content');
             allTabs.forEach(tab => tab.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
         }
 
-        // Muestra la pestaña de contacto por defecto al cargar la página
+        function toggleMenu() {
+            const nav = document.querySelector('header nav');
+            nav.classList.toggle('active');
+        }
+
         window.onload = function () {
             showTab('contacto');
-        }
+        };
     </script>
-
 </body>
 
 </html>
