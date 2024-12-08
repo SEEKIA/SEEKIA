@@ -41,11 +41,12 @@
         /* --- Menú de Navegación --- */
         header nav {
             display: flex;
-            justify-content: flex-start; /* Alinea el menú a la izquierda */
-            gap: 120px; /* Espaciado razonable entre enlaces */
+            justify-content: flex-start;
+            gap: 120px;
             flex-wrap: wrap;
             margin-left: auto;
             margin-right: auto;
+            width: auto;
         }
 
         header nav a {
@@ -69,21 +70,21 @@
             color: white;
             background: none;
             border: none;
+            z-index: 1100;
         }
 
-        /* --- Estilo Responsivo --- */
+        /* --- Estilo para pantallas pequeñas --- */
         @media (max-width: 768px) {
             header nav {
                 display: none;
                 flex-direction: column;
                 align-items: center;
-                gap: 20px;
+                background-color: rgba(0, 0, 0, 0.9);
                 position: absolute;
-                top: 100%;
+                top: 60px;
                 left: 0;
                 width: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                padding: 15px 0;
+                padding: 10px 0;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
             }
 
@@ -96,7 +97,7 @@
             }
         }
 
-        /* --- Hero --- */
+        /* --- Sección Hero --- */
         .hero {
             background: url('./img/logo.jpg') center/cover no-repeat;
             height: 60vh;
@@ -117,6 +118,10 @@
             bottom: 0;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
             z-index: -1;
+        }
+
+        .hero div {
+            position: relative;
         }
 
         .hero h1 {
@@ -178,12 +183,14 @@
         footer a:hover {
             text-decoration: underline;
         }
+
     </style>
 </head>
 
 <body>
     <header>
         <div class="logo">SEEKIA</div>
+        <!-- Menú hamburguesa -->
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <nav>
             <a href="#" onclick="showTab('contacto')">Contacto</a>
