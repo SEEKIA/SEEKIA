@@ -1,257 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEEKIA CONSULTORES SAS</title>
-    <style>
-        /* --- Estilo Global --- */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(244, 244, 244, 0.9)); /* Degradado de fuera hacia adentro */
-            color: #333;
-        }
-
-        /* --- Encabezado --- */
-        header {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between; /* Logo a la izquierda y menú centrado */
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            flex-wrap: wrap;
-        }
-
-        /* --- Logo --- */
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            margin-right: 20px;
-        }
-
-        /* --- Menú de Navegación --- */
-        header nav {
-            display: flex;
-            justify-content: flex-start;
-            gap: 120px;
-            flex-wrap: wrap;
-            margin-left: auto;
-            margin-right: auto;
-            width: auto;
-        }
-
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        header nav a:hover {
-            text-shadow: 0 0 10px #fff;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 5px;
-        }
-
-        /* --- Menú hamburguesa --- */
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: white;
-            background: none;
-            border: none;
-            z-index: 1100;
-        }
-
-        /* --- Estilo para pantallas pequeñas --- */
-        @media (max-width: 768px) {
-            header nav {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                background-color: rgba(0, 0, 0, 0.9);
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                padding: 10px 0;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            }
-
-            header nav.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        /* --- Sección Hero --- */
-        .hero {
-            background: url('./img/logo.jpg') center/cover no-repeat;
-            height: 60vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
-            z-index: -1;
-        }
-
-        .hero div {
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin: 10px 0 0;
-        }
-
-        /* --- Contenido Principal --- */
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-            margin-top: 80px;
-        }
-
-        section {
-            margin-bottom: 30px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            margin-top: 0;
-            color: #333;
-        }
-
-        section p {
-            line-height: 1.6;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 30px;
-        }
-
-        footer a {
-            color: #FFD700;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-    </style>
+    <title>Grupo Seekia</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
     <header>
-        <div class="logo">SEEKIA</div>
-        <!-- Menú hamburguesa -->
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="logo-container">
+            <span class="brand">SEEKIA</span>
+            <img src="img/logo.png" alt="Logo Seekia" class="logo">
+        </div>
         <nav>
-            <a href="#" onclick="showTab('contacto')">Contacto</a>
-            <a href="#" onclick="showTab('quienes-somos')">¿Quiénes somos?</a>
-            <a href="#" onclick="showTab('mision-vision')">Misión y Visión</a>
-            <a href="#" onclick="showTab('servicios')">Servicios</a>
+            <a href="#inicio" class="nav-link">Inicio</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
         </nav>
     </header>
 
-    <div class="hero">
-        <div>
-            <h1>SEEKIA CONSULTORES SAS</h1>
-            <p>Soluciones integrales para tu negocio</p>
-        </div>
-    </div>
-
     <main>
-        <section id="contacto" class="tab-content">
-            <h2>Contacto</h2>
-            <p>WhatsApp: <a href="https://wa.me/573138896907" target="_blank" style="color:green;">+57 313 8896907</a></p>
-            <p>Correo electrónico: <a href="mailto:seekiagroup@gmail.com" style="color: blue;">seekiagroup@gmail.com</a></p>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>Bienvenidos a Grupo Seekia</h1>
+                <p>Explora nuestras líneas de negocio y descubre lo que podemos ofrecerte.</p>
+            </div>
         </section>
 
-        <section id="quienes-somos" class="tab-content">
-            <h2>¿Quiénes somos?</h2>
-            <p>Somos una empresa consultora comprometida con soluciones innovadoras.</p>
-        </section>
-
-        <section id="mision-vision" class="tab-content">
-            <h2>Misión</h2>
-            <p>Proveer soluciones integrales que ayuden a nuestros clientes a mejorar sus procesos.</p>
-            <h2>Visión</h2>
-            <p>Ser la firma de consultoría más confiable y eficiente en el mercado.</p>
-        </section>
-
-        <section id="servicios" class="tab-content">
-            <h2>Servicios</h2>
-            <p>Ofrecemos consultoría en diferentes áreas, incluyendo gestión de proyectos y análisis de datos.</p>
+        <!-- Sección de líneas de negocio -->
+        <section id="negocios" class="business-section">
+            <h2>Nuestras líneas de negocio</h2>
+            <div class="business-cards">
+                <div class="card">
+                    <img src="img/investigacion.jpg" alt="Investigación">
+                    <h3>Investigación</h3>
+                    <p>Proveemos soluciones innovadoras basadas en investigación científica y tecnológica.</p>
+                    <a href="ginv.html" class="button">Ver más</a>
+                </div>
+                <div class="card">
+                    <img src="img/linicio.jpg" alt="Legal">
+                    <h3>Legal</h3>
+                    <p>Brindamos servicios legales integrales con ética y profesionalismo.</p>
+                    <a href="glegal.html" class="button">Ver más</a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 SEEKIA Consultores SAS. Todos los derechos reservados. <a href="#contacto">Contacto</a></p>
+        <p>&copy; 2025 Grupo Seekia. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        function showTab(tabId) {
-            const allTabs = document.querySelectorAll('.tab-content');
-            allTabs.forEach(tab => tab.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-        }
-
-        function toggleMenu() {
-            const nav = document.querySelector('header nav');
-            nav.classList.toggle('active');
-        }
-
-        window.onload = function () {
-            showTab('contacto');
-        };
-    </script>
+    <script src="index.js"></script>
 </body>
-
 </html>
