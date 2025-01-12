@@ -1,3 +1,25 @@
+/* Variables CSS */
+:root {
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --link-color: #0066cc;
+    --card-background: #ffffff;
+    --header-background: linear-gradient(to right, #6d6c6c, #ffffff);
+    --footer-background: linear-gradient(to right, #ffffff, #6d6c6c);
+    --button-background: #6d6c6c;
+    --button-text: #ffffff;
+}
+
+body.dark-theme {
+    --background-color: #333;
+    --text-color: #f9f9f9;
+    --link-color: #66b2ff;
+    --card-background: #444;
+    --header-background: linear-gradient(to right, #222, #444);
+    --footer-background: linear-gradient(to right, #444, #222);
+    --button-background: #444;
+    --button-text: #ffffff;
+}
 /* Reset básico */
 * {
     margin: 0;
@@ -18,7 +40,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background: #555;
+    background: #000000;
     color: white;
     position: sticky;
     top: 0;
@@ -104,6 +126,7 @@ header {
     position: relative;
     color: white;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .hero-section::after {
@@ -142,7 +165,7 @@ header {
 
 .business-section h2 {
     font-size: 2rem;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     color: #333;
 }
 
@@ -154,18 +177,18 @@ header {
 }
 
 .card {
-    background: rgba(68, 68, 68, 0.089);
+    background: rgb(255, 255, 255);
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;   
     max-width: 450px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 100px rgb(0, 0, 0);
 }
 
 .card img {
@@ -209,3 +232,159 @@ footer {
     background: #555;
     color: white;
 }
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Ocultar el menú por defecto */
+        flex-direction: column;
+        background-color: #555;
+        position: absolute;
+        top: 60px; /* Ajustar posición debajo del header */
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: max-height 0.3s ease-in-out; /* Añadir transición */
+        overflow: hidden; /* Esconder contenido desbordante */
+        max-height: 0; /* Altura inicial cero */
+    }
+
+    .menu.show {
+        display: flex; /* Mostrar menú cuando tiene la clase 'show' */
+        max-height: 500px; /* Altura máxima para mostrar el menú */
+    }
+}
+.button {
+    text-decoration: none;
+    color: white;
+    background: #555;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Efecto de carga en botones */
+.button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+}
+/* Footer nuevo */
+footer {
+    background: linear-gradient(to right, #ffffff, #6d6c6c);
+    color: rgb(0, 0, 0);
+    padding: 45px 20px;
+    margin-top: auto;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+.footer-section p, .footer-section a {
+    color: #000000c2;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #3c3c3c;
+}
+
+.social-links {
+    text-align: left;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Animaciones */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .detail-card {
+        min-width: 250px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-buttons {
+        justify-content: center;
+    }
+    
+    .footer-section {
+        align-items: center;
+    }
+    .detail-card ul li::before {
+        content: "\f00c"; /* Código del icono de Font Awesome */
+        font-family: "Font Awesome 6 Free"; 
+        font-weight: 900;
+        color: #ffffff;
+        margin-right: 10px;
+    } 
+   }   /* Añadir transiciones a los elementos */
+/* Iconos en la sección de detalles */

@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Seekia</title>
-    <link rel="stylesheet" href="index.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Grupo Seekia ofrece tecnología e innovación al servicio de la justicia.">
+        <meta name="keywords" content="investigación, legal, tecnología, justicia">
+        <title>Grupo Seekia</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    </head>
+    
 </head>
 <body>
     <header>
@@ -16,11 +24,12 @@
             <!-- Botón del menú hamburguesa -->
             <div class="menu-toggle" id="menu-toggle">☰</div>
             <ul class="menu" id="menu">
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="nosotros.html" class="nav-link">Sobre Nosotros</a></li>
-                <li><a href="contacto.html" class="nav-link">Contacto</a></li>   
+                <li><a href="ind" class="nav-link"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="nosotros.html" class="nav-link"><i class="fas fa-info-circle"></i> Sobre Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>   
             </ul>
         </nav>
+        
     </header>
 
     <main>
@@ -38,22 +47,44 @@
             <div class="business-cards">
                 <div class="card">
                     <img src="img/investigacion.jpg" alt="Investigación">
-                    <h3>Investigación</h3>
+                    <h3>Investigación <i class="fas fa-search"></i></h3>
                     <p>Proveemos soluciones innovadoras basadas en investigación científica y tecnológica.</p>
                     <a href="ginv.html" class="button">Ver más</a>
                 </div>
                 <div class="card">
                     <img src="img/linicio.jpg" alt="Legal">
-                    <h3>Legal</h3>
+                    <h3>Legal <i class="fas fa-gavel"></i></h3>
                     <p>Brindamos servicios legales integrales con ética y profesionalismo.</p>
                     <a href="glegal.html" class="button">Ver más</a>
                 </div>
             </div>
         </section>
+        
     </main>
 
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contáctenos</h3>
+                <p>(57) 322 731 17 05</p>
+                <p>gruposeekia@gmail.com</p>
+                <p>Bogotá - Colombia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Accesos Rápidos</h3>
+                <a href="contacto.html">Contactenos</a>
+            </div>
+            <div class="footer-section social-links">
+                <h3>Síguenos</h3>
+                <div class="social-buttons">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
         <p>&copy; 2025 Grupo Seekia. Todos los derechos reservados.</p>
+
     </footer>
 
     <script src="index.js"></script>

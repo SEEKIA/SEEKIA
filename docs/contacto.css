@@ -1,3 +1,26 @@
+/* Variables CSS */
+:root {
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --link-color: #0066cc;
+    --card-background: #ffffff;
+    --header-background: linear-gradient(to right, #6d6c6c, #ffffff);
+    --footer-background: linear-gradient(to right, #ffffff, #6d6c6c);
+    --button-background: #6d6c6c;
+    --button-text: #ffffff;
+}
+
+body.dark-theme {
+    --background-color: #333;
+    --text-color: #f9f9f9;
+    --link-color: #66b2ff;
+    --card-background: #444;
+    --header-background: linear-gradient(to right, #222, #444);
+    --footer-background: linear-gradient(to right, #444, #222);
+    --button-background: #444;
+    --button-text: #ffffff;
+}
+
 /* Reset básico */
 * {
     margin: 0;
@@ -33,8 +56,8 @@ header {
 }
 
 .logo {
-    height: 40px;
-    margin-left: 10px;
+    height: 0px;
+    margin-left: 0px;
 }
 
 nav a {
@@ -161,10 +184,130 @@ nav a:hover {
     background: #333;
 }
 
-/* Footer */
+/* Footer nuevo */
 footer {
-    background: #555;
-    color: white;
+    background: linear-gradient(to right, #ffffff, #6d6c6c);
+    color: rgb(0, 0, 0);
+    padding: 45px 20px;
+    margin-top: auto;
     text-align: center;
-    padding: 10px;
 }
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+.footer-section p, .footer-section a {
+    color: #000000c2;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #3c3c3c;
+}
+
+.social-links {
+    text-align: left;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Animaciones */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .detail-card {
+        min-width: 250px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-buttons {
+        justify-content: center;
+    }
+    
+    .footer-section {
+        align-items: center;
+    }
+    /* Añadir transiciones a los elementos */
+/* Iconos en la sección de detalles */
+.detail-card ul li::before {
+    content: "\f00c"; /* Código del icono de Font Awesome */
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900;
+    color: #3498db;
+    margin-right: 10px;
+}
+body {
+    font-family: 'Roboto', sans-serif; /* Usar Google Fonts por ejemplo */
+}
+/* Gradientes sutiles para el fondo */
+body {
+    background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
+}
+
+
+
+}
+

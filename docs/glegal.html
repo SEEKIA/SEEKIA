@@ -5,64 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo Legal - Seekia</title>
     <link rel="stylesheet" href="glegal.css">
+    <!-- Agregar Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="logo-container">
-            <span class="brand">SEEKIA</span>
-            <img src="img/legal.png" alt="Logo Seekia" class="logo">
+            <span class="brand"> GRUPO SEEKIA</span>
+            <img src="img/inv.png" alt="Logo Seekia" class="logo">
         </div>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="contacto.html">Contacto</a>
+            <!-- Botón del menú hamburguesa -->
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+            <ul class="menu" id="menu">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="nosotros.html" class="nav-link"><i class="fas fa-info-circle"></i> Sobre Nosotros</a></li>
+                <li><a href="contacto.html" class="nav-link"><i class="fas fa-envelope"></i> Contacto</a></li>   
+            </ul>
         </nav>
+        
     </header>
 
     <!-- Servicios -->
     <main>
+                <!-- Hero Section -->
+                <section id="hero" class="hero-section">
+                    <div class="hero-content">
+                        <h1>GRUPO LEGAL</h1>
+                        <p>Tecnología e innovación al servicio de la justicia.</p>
+                    </div>
+                </section>
         <section class="services">
-            <h1>Servicios</h1>
+            <h1>SERVICIOS</h1>
             <div class="service-cards">
-                <!-- Tarjeta 1 -->
                 <div class="card">
-                    <img src="img/asesoria-legal.jpg" alt="Asesoría Legal">
-                    <h3>Asesoría Legal</h3>
-                    <p>Proveemos soluciones legales personalizadas para casos civiles, penales y corporativos.</p>
+                    <img src="img/inves.jpg" alt="INVESTIGACIONES">
+                    <h3>INVESTIGACIONES</h3>
+                    <p>Investigaciones al servicio de la justiicia.</p>
                 </div>
-                <!-- Tarjeta 2 -->
                 <div class="card">
-                    <img src="img/contratos.jpg" alt="Gestión de Contratos">
-                    <h3>Gestión de Contratos</h3>
-                    <p>Elaboramos y revisamos contratos para garantizar el cumplimiento de la normativa vigente.</p>
+                    <img src="img/evi.jpg" alt="OBTENCIÓN DE EVIDENCIA">
+                    <h3>OBTENCIÓN DE EVIDENCIA</h3>
+                    <p>Obtención de evidencia mediante métodos investigativos.</p>
                 </div>
-                <!-- Tarjeta 3 -->
                 <div class="card">
-                    <img src="img/mediacion.jpg" alt="Mediación y Arbitraje">
-                    <h3>Mediación y Arbitraje</h3>
-                    <p>Ofrecemos alternativas de solución de conflictos a través de la mediación y el arbitraje.</p>
+                    <img src="img/est.jpg" alt="ESTUDIOS DE SEGURIDAD">
+                    <h3>ESTUDIOS DE SEGURIDAD</h3>
+                    <p>Mitigación de riesgos en procesos de selección.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Pestañas: Misión y Visión, Quiénes Somos -->
-        <section class="tabs-section">
-            <div class="tabs">
-                <button class="tab-button active" data-tab="mision-vision">Misión y Visión</button>
-                <button class="tab-button" data-tab="quienes-somos">¿Quiénes Somos?</button>
-            </div>
-            <div class="tab-content">
-                <!-- Misión y Visión -->
-                <div id="mision-vision" class="tab active">
-                    <h2>Misión</h2>
-                    <p>Brindar servicios legales integrales con ética y profesionalismo, asegurando la justicia y el respeto por los derechos.</p>
-                    <h2>Visión</h2>
-                    <p>Ser reconocidos como líderes en soluciones legales innovadoras y efectivas en el ámbito nacional e internacional.</p>
+        <div class="decorative-line"></div>
+
+        <section class="service-details">
+            <div class="detail-container">
+                <div class="detail-card">
+                    <h2>INVESTIGACIONES</h2>
+                    <ul>
+                        <li>Investigaciones corporativas</li>
+                        <li>Investigación de antecedentes</li>
+                        <li>Investigaciones civiles y penales</li>
+                        <li>Localización de personas</li>
+                        <li>Investigación de fraudes</li>
+                    </ul>
                 </div>
-                <!-- Quiénes Somos -->
-                <div id="quienes-somos" class="tab">
-                    <h2>¿Quiénes Somos?</h2>
-                    <p>Somos un equipo de profesionales con amplia experiencia en el ámbito legal, comprometidos con la excelencia y el bienestar de nuestros clientes.</p>
+                <div class="detail-card">
+                    <h2>OBTENCIÓN DE EVIDENCIA</h2>
+                    <ul>
+                        <li>Recolección profesional de evidencias</li>
+                        <li>Documentación fotográfica y en video</li>
+                        <li>Preservación de evidencia digital</li>
+                        <li>Cadena de custodia</li>
+                        <li>Análisis forense</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <h2>ESTUDIOS DE SEGURIDAD</h2>
+                    <ul>
+                        <li>Evaluación de riesgos</li>
+                        <li>Verificación de antecedentes laborales</li>
+                        <li>Estudios socioeconómicos</li>
+                        <li>Análisis de vulnerabilidades</li>
+                        <li>Recomendaciones de seguridad</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -70,9 +97,30 @@
 
     <!-- Footer -->
     <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contáctenos</h3>
+                <p>(57) 322 731 17 05</p>
+                <p>gruposeekia@gmail.com</p>
+                <p>Bogotá - Colombia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Accesos Rápidos</h3>
+                <a href="index.html">Inicio</a>
+            </div>
+            <div class="footer-section social-links">
+                <h3>Síguenos</h3>
+                <div class="social-buttons">
+                    <a href="https://www.facebook.com/gruposeekia/" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/gruposeekia/" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
         <p>&copy; 2025 Grupo Seekia. Todos los derechos reservados.</p>
-    </footer>
 
+    </footer>
+  
     <script src="glegal.js"></script>
 </body>
 </html>

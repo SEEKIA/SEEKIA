@@ -25,8 +25,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #555;
-    color: white;
+    background: linear-gradient(to right, #6d6c6c, #ffffff);
+    color: rgb(255, 255, 255);
 }
 
 .logo-container {
@@ -45,14 +45,14 @@ header {
 }
 
 nav a {
-    color: white;
+    color: black !important;
     text-decoration: none;
     margin-left: 20px;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #ccc;
+    color: #555 !important;
 }
 
 /* Servicios */
@@ -273,5 +273,76 @@ footer {
     
     .footer-section {
         align-items: center;
+    }
+    /* Añadir transiciones a los elementos */
+/* Iconos en la sección de detalles */
+.detail-card ul li::before {
+    content: "\f00c"; /* Código del icono de Font Awesome */
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900;
+    color: #3498db;
+    margin-right: 10px;
+}
+body {
+    font-family: 'Roboto', sans-serif; /* Usar Google Fonts por ejemplo */
+}
+/* Gradientes sutiles para el fondo */
+body {
+    background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
+}
+
+
+
+}
+/* Menú */
+.menu-toggle {
+    display: none; /* Ocultar en pantallas grandes */
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.menu {
+    display: flex; /* Mostrar enlaces en línea en pantallas grandes */
+    gap: 20px;
+    list-style: none;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu li a:hover {
+    color: #000000;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Ocultar el menú por defecto */
+        flex-direction: column;
+        background-color: #555;
+        position: absolute;
+        top: 60px; /* Ajustar posición debajo del header */
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .menu.show {
+        display: flex; /* Mostrar menú cuando tiene la clase 'show' */
+    }
+
+    .menu li {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #444;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón hamburguesa */
     }
 }
