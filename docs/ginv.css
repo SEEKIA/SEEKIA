@@ -342,14 +342,16 @@ body {
 }
 /* Hero Section */
 .hero-section {
-    height: 50vh;
+    height: auto; /* Ajusta automáticamente la altura al contenido */
+    padding: 20px; /* Añade algo de espacio alrededor del contenido */
     background: url('img/hero.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Asegura que los elementos estén apilados verticalmente */
+    text-align: center;
     position: relative;
     color: white;
-    text-align: center;
     margin-bottom: 50px;
 }
 
@@ -370,10 +372,18 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: 3rem; /* Ajusta el tamaño para pantallas grandes */
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    max-width: 90%; /* Limita el ancho máximo al 90% del contenedor */
+    word-wrap: break-word; /* Permite dividir palabras largas */
+    word-break: break-word; /* Divide palabras si son demasiado largas */
+    text-align: center; /* Asegura que el texto esté centrado */
+    line-height: 1.2; /* Ajusta el espacio entre líneas */
+    margin: 0 auto; /* Centra horizontalmente el texto */
+    overflow-wrap: break-word; /* Divide el texto si se desborda */
 }
+
 
 .hero-content p {
     font-size: 1.2rem;
@@ -401,19 +411,20 @@ body {
 }
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 2rem; /* Reduce el tamaño del texto */
+        font-size: 2rem; /* Reduce el tamaño del texto en pantallas pequeñas */
         line-height: 1.2; /* Mejora la legibilidad */
     }
 
     .hero-content p {
         font-size: 1rem; /* Ajusta el tamaño del subtítulo */
+        max-width: 90%; /* Asegura que no se desborde */
     }
 }
 
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 1.8rem; /* Reduce aún más para pantallas muy pequeñas */
-        line-height: 1.1;
+        font-size: 1.8rem; /* Reduce aún más el tamaño en pantallas muy pequeñas */
+        line-height: 1.1; /* Espacio más compacto entre líneas */
     }
 
     .hero-content p {
