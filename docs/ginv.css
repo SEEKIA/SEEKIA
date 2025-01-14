@@ -378,6 +378,9 @@ body {
 .hero-content p {
     font-size: 1.2rem;
     color: #ddd;
+    max-width: 90%; /* Asegura que el texto del párrafo no se salga */
+    margin: 0 auto; /* Centra el texto horizontalmente */
+    line-height: 1.5; /* Ajusta el espacio entre líneas */
 }
 .resaltado {
     font-size: 5rem; /* Tamaño del texto */
@@ -395,4 +398,25 @@ body {
     font-weight: 900;
     color: #000000;
     margin-right: 10px;
+}
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem; /* Reduce el tamaño del texto */
+        line-height: 1.2; /* Mejora la legibilidad */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Ajusta el tamaño del subtítulo */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem; /* Reduce aún más para pantallas muy pequeñas */
+        line-height: 1.1;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem; /* Ajusta el subtítulo para pantallas pequeñas */
+    }
 }
