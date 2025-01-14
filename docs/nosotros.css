@@ -1,13 +1,13 @@
 /* Variables CSS */
 :root {
     --background-color: #f9f9f9;
-    --text-color: #333;
+    --text-color: #000000;
     --link-color: #0066cc;
     --card-background: #ffffff;
     --header-background: linear-gradient(to right, #6d6c6c, #ffffff);
     --footer-background: linear-gradient(to right, #ffffff, #6d6c6c);
     --button-background: #6d6c6c;
-    --button-text: #ffffff;
+    --button-text: #ff0000;
 }
 
 body.dark-theme {

@@ -1,26 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
-    emailjs.init("c_harles199@hotmail.com"); // Sustituye con tu User ID de EmailJS
-
     const form = document.getElementById("contactForm");
 
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
+        // Validación personalizada antes del envío
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-        const formData = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            phone: document.getElementById("phone").value,
-            message: document.getElementById("message").value,
-        };
+        if (!name || !email || !message) {
+            e.preventDefault();
+            alert("Por favor, completa todos los campos obligatorios.");
+            return false;
+        }
 
-        emailjs
-            .send("TU_SERVICE_ID", "TU_TEMPLATE_ID", formData)
-            .then(() => {
-                alert("¡Mensaje enviado con éxito!");
-                form.reset(); // Reiniciar formulario
-            })
-            .catch((error) => {
-                alert("Hubo un error al enviar el mensaje: " + error.text);
-            });
+        // Validar formato de correo
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            e.preventDefault();
+            alert("Por favor, ingresa un correo electrónico válido.");
+            return false;
+        }
+
+        // Si todo está bien, el formulario se envía
+        alert("Enviando el mensaje...");
     });
 });

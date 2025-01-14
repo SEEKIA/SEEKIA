@@ -77,22 +77,22 @@ nav a:hover {
 }
 
 .card {
-    background: rgb(0, 0, 0);
-    border-radius: 1000px;
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.611);
+    border-radius: 25px;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 300px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-40px);
+    transform: translateY(-25px);
     box-shadow: 0 20px 100px rgb(0, 0, 0);
 }
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 150px;
     object-fit: cover;
 }
 
@@ -110,14 +110,14 @@ nav a:hover {
 /* Línea decorativa */
 .decorative-line {
     width: 80%;
-    height: 3px;
-    background: linear-gradient(to right, #555, #ccc);
-    margin: 40px auto;
+    height: 2px;
+    background: linear-gradient(to right, #555, #0f0f0f);
+    margin: 85px auto;
 }
 
 /* Detalles de Servicios */
 .service-details {
-    padding: 40px 20px;
+    padding: 50px 20px;
     background-color: #f5f5f5;
     animation: fadeIn 1s ease-in-out forwards;
 }
@@ -125,14 +125,14 @@ nav a:hover {
 .detail-container {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 8px;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 .detail-card {
-    background: white;
+    background: rgb(255, 255, 255);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -140,6 +140,7 @@ nav a:hover {
     min-width: 300px;
     max-width: 400px;
     transition: transform 0.3s ease;
+    font-style: italic; /* Cursiva */
 }
 
 .detail-card:hover {
@@ -277,13 +278,7 @@ footer {
     }
     /* Añadir transiciones a los elementos */
 /* Iconos en la sección de detalles */
-.detail-card ul li::before {
-    content: "\f00c"; /* Código del icono de Font Awesome */
-    font-family: "Font Awesome 6 Free"; 
-    font-weight: 900;
-    color: #3498db;
-    margin-right: 10px;
-}
+
 body {
     font-family: 'Roboto', sans-serif; /* Usar Google Fonts por ejemplo */
 }
@@ -353,7 +348,7 @@ body {
 }
 
 .menu li a:hover {
-    color: #000000;
+    color: #ffffffb7;
 }
 
 /* Para pantallas pequeñas */
@@ -382,4 +377,22 @@ body {
     .menu-toggle {
         display: block; /* Mostrar el botón hamburguesa */
     }
+}
+.detail-card ul li::before {
+    content: "\f00c"; /* Código del icono de Font Awesome */
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 1000;
+    color: #000000a5;
+    margin-right: 15px;
+}
+.resaltado {
+    font-size: 2rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita para resaltar */
+    font-style: italic; /* Cursiva */
+    color: white; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+    background-color: #555; /* Fondo oscuro */
+    padding: 10px 20px; /* Espaciado interno para resaltar */
+    border-radius: 10px; /* Bordes redondeados */
+    display: inline-block; /* Para ajustar el fondo al texto */
 }
