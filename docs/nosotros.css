@@ -7,7 +7,7 @@
     --header-background: linear-gradient(to right, #6d6c6c, #ffffff);
     --footer-background: linear-gradient(to right, #ffffff, #6d6c6c);
     --button-background: #6d6c6c;
-    --button-text: #ff0000;
+    --button-text: #ffffff;
 }
 
 body.dark-theme {

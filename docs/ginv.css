@@ -342,16 +342,14 @@ body {
 }
 /* Hero Section */
 .hero-section {
-    height: auto; /* Ajusta automáticamente la altura al contenido */
-    padding: 20px; /* Añade algo de espacio alrededor del contenido */
+    height: 50vh;
     background: url('img/hero.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Asegura que los elementos estén apilados verticalmente */
-    text-align: center;
     position: relative;
     color: white;
+    text-align: center;
     margin-bottom: 50px;
 }
 
@@ -372,35 +370,14 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3rem; /* Ajusta el tamaño para pantallas grandes */
+    font-size: 3rem;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    max-width: 90%; /* Limita el ancho máximo al 90% del contenedor */
-    word-wrap: break-word; /* Permite dividir palabras largas */
-    word-break: break-word; /* Divide palabras si son demasiado largas */
-    text-align: center; /* Asegura que el texto esté centrado */
-    line-height: 1.2; /* Ajusta el espacio entre líneas */
-    margin: 0 auto; /* Centra horizontalmente el texto */
-    overflow-wrap: break-word; /* Divide el texto si se desborda */
 }
-
 
 .hero-content p {
     font-size: 1.2rem;
     color: #ddd;
-    max-width: 90%; /* Asegura que el texto del párrafo no se salga */
-    margin: 0 auto; /* Centra el texto horizontalmente */
-    line-height: 1.5; /* Ajusta el espacio entre líneas */
-}
-.resaltado {
-    font-size: 5rem; /* Tamaño del texto */
-    font-weight: bold; /* Negrita para resaltar */
-    font-style: italic; /* Cursiva */
-    color: rgb(255, 0, 0); /* Color del texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
-    padding: 10px 20px; /* Espaciado interno para resaltar */
-    border-radius: 10px; /* Bordes redondeados */
-    display: inline-block; /* Para ajustar el fondo al texto */
 }
 .detail-card ul li::before {
     content: "\f00c"; /* Código del icono de Font Awesome */

@@ -1,26 +1,3 @@
-/* Variables CSS */
-:root {
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --link-color: #0066cc;
-    --card-background: #ffffff;
-    --header-background: linear-gradient(to right, #6d6c6c, #ffffff);
-    --footer-background: linear-gradient(to right, #ffffff, #6d6c6c);
-    --button-background: #6d6c6c;
-    --button-text: #ffffff;
-}
-
-body.dark-theme {
-    --background-color: #333;
-    --text-color: #f9f9f9;
-    --link-color: #66b2ff;
-    --card-background: #444;
-    --header-background: linear-gradient(to right, #222, #444);
-    --footer-background: linear-gradient(to right, #444, #222);
-    --button-background: #444;
-    --button-text: #ffffff;
-}
-
 /* Reset básico */
 * {
     margin: 0;
